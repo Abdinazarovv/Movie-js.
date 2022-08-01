@@ -86,11 +86,11 @@ renderMovies(normolizedArray);
 form.addEventListener("submit", e =>{
     e.preventDefault()
     
-    let regex = new RegExp(search.value.trim(), "gi")
+    let relax = new RegExp(search.value.trim(), "gi")
     let filterMovie = movies
     
     if(search.value.length > 3){
-        filterMovie = movies.filter(item => String(item.title).match(regex))
+        filterMovie = movies.filter(item => String(item.title).match(relax))
     }
     
     if (movieReating.value){
