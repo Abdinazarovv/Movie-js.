@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Bootstrap 5</title>
+</head>
+<body>
+    
+    
+    <main>
+        <section>
+            <div class="container py-4">
+                <h2 class="text-center mb-4">Movies catalog</h2>
+                
+                <div class="row">
+                    <div class="col-4 position-relative">
+                        <div class="position-sticky w-100" style="top: 30px;">
+                            <form class="mb-5 form">
+                                <input type="text" class="form-control form-control-sm mb-2"m id="movie__search" aria-describedby="Search for movies" placeholder="Search for movies years">
+                                
+                                <input type="number" class="form-control form-control-sm mb-2 movie__rating" id="movie__number" placeholder="IMBD Rating" min="0"  step="0.1">
+                                
+                                <select class="form-select form-select-sm mb-2" id="movie__select" aria-label="Default select example">
+                                    <option selected>All</option>
+                                    <option value="1">Uncategorized</option>
+                                    <option value="2">Documentary</option>
+                                    <option value="3">Music</option>
+                                    <option value="4">Adventure</option>
+                                    <option value="5">Animation</option>
+                                    <option value="6">Comedy</option>
+                                    <option value="7">Family</option>
+                                    <option value="8">Fantasy</option>
+                                    <option value="9">Horror</option>
+                                    <option value="10">Drama</option>
+                                    <option value="11">Sport</option>
+                                </select>
+                                
+                                <select class="form-select form-select-sm mb-2" aria-label="Default select example">
+                                    <option selected>Rating(First high)</option>
+                                    <option value="1">Rating(First middle)</option>
+                                    <option value="2">Rating(First low)</option>
+                                </select>
+                                
+                                <button type="submit" class="btn btn-primary btn-sm w-100">Submit</button>
+                            </form>
+                            
+                            <h3 class="text-center">Bookmarked movies</h3>
+                            
+                            <ul class="list-group">
+                                <li class="list-group-item p-3">
+                                    <h4 class="d-inline-block text-truncate h5" style="max-width: 100%;" >Pokemon</h4>
+                                    <button class="btn btn-danger btn-sm d-block" type="button">Remove</button>
+                                </li>
+                                <li class="list-group-item p-3">
+                                    <h4 class="d-inline-block text-truncate h5" style="max-width: 100%;" >Pokemon</h4>
+                                    <button class="btn btn-danger btn-sm d-block" type="button">Remove</button>
+                                </li>
+                                <li class="list-group-item p-3">
+                                    <h4 class="d-inline-block text-truncate h5" style="max-width: 100%;" >Pokemon</h4>
+                                    <button class="btn btn-danger btn-sm d-block" type="button">Remove</button>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-8">
+                        <h3 class="fs-5">Search result: <span class="result">2</span></h3>
+                        
+                        <div class="alert alert-success alert-dismissible p-2 fade show" role="alert">
+                            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                            <button type="button" class="btn-close btn-sm p-0 h-100 pe-3" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="row row-cols-2 movies_wrapper">
+                            
+                            
+                        </div>
+                        
+                        
+                        <ul class="pagination justify-content-center" >
+                            <li class="page-item">
+                                <a class="page-link disabled" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+                            <li class="page-item"><a class="page-link" href="#">10</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+    </main>
+    
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <template id="movie_card">
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img  src="./images/img1.jpg" class="card-img-top" style="max-height: 200px; object-fit: cover; object-position: center;" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title text-truncate card__heading" style="max-width: 100%;">Card title sfjksjadf dsfhxgdf dfh gfhgfh fjf jgfjfgj gdsf sdf</h4>
+                    
+                    <div class="fs-5 fw-bold">
+                        <img src="./images/plus.svg" alt="">
+                        <span class="movie__year">2018</span>
+                    </div>
+                    <div class="fs-5 fw-bold">
+                        <img src="./images/plus.svg" alt="">
+                        <span class="movie__rating">8.7</span>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="#" class="btn btn-outline-danger movie__link">Watch trailer</a>
+                        
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            More info
+                        </button>
+                        
+                        <button class="btn btn-outline-success" type="button">Bookmark</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <script src="./js/movies.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
